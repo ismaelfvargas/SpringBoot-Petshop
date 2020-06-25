@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>ListaCli</title>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>CPF</th>
+                <th>Idade</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cliente : ${clientes}">
+            <td><span th:text="${cliente.nome}"></span></td>
+            <td><span th:text="${cliente.cpf}"></span></td>
+            <td><span th:text="${cliente.idade}"></span></td>
+            <td><span th:text="${cliente.telefone}"></span></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <h3><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">chevron_left</i>Voltar</a></h3>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+</html>
